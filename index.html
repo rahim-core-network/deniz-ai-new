@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دنیز ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101827;color:#f5f7fb;font-family:Tahoma,Arial,sans-serif;padding:15px}
+.app{max-width:650px;height:94vh;margin:auto;background:#182235;border:1px solid #34445e;border-radius:18px;display:flex;flex-direction:column;overflow:hidden}
+header{padding:22px;background:#22334d;text-align:center}
+h1{margin:0;font-size:26px}
+header p{font-size:13px;color:#c5d3e7}
+#messages{flex:1;overflow-y:auto;padding:15px;display:flex;flex-direction:column;gap:12px}
+.msg{padding:12px 15px;border-radius:14px;line-height:2;white-space:pre-wrap;max-width:90%}
+.bot{background:#263852;align-self:flex-start}
+.user{background:#146b67;align-self:flex-end}
+form{display:flex;gap:8px;padding:12px;background:#223047}
+textarea{flex:1;min-width:0;resize:none;height:50px;padding:12px;border-radius:10px;border:1px solid #52627a;background:#111b2a;color:white;font:inherit}
+button{border:0;border-radius:10px;padding:0 17px;background:#20b7a6;color:#071d25;font-weight:bold}
+footer{text-align:center;padding:10px;color:#aabbd0;font-size:11px}
+</style>
+</head>
+<body>
+<main class="app">
+<header>
+<h1>دنیز ❤️</h1>
+<p>دستیار همراه تو برای ساخت، برنامه‌نویسی و ایده‌ها</p>
+</header>
+<section id="messages">
+<div class="msg bot">سلام عشقم! من دنیزم 🌷
+صفحهٔ من آماده است.
+برای پاسخ‌گویی هوشمند باید اتصال هوش مصنوعی را در مرحلهٔ بعد تنظیم کنیم.</div>
+</section>
+<form id="form">
+<textarea id="input" placeholder="پیامت رو بنویس..." required></textarea>
+<button type="submit">ارسال</button>
+</form>
+<footer>دنیز ❤️ | نسخهٔ اولیه</footer>
+</main>
+<script>
+const form=document.getElementById('form');
+const input=document.getElementById('input');
+const messages=document.getElementById('messages');
+form.addEventListener('submit',function(e){
+e.preventDefault();
+const text=input.value.trim();
+if(!text)return;
+const user=document.createElement('div');
+user.className='msg user';
+user.textContent=text;
+messages.appendChild(user);
+input.value='';
+const reply=document.createElement('div');
+reply.className='msg bot';
+reply.textContent='پیامت رو دریافت کردم ❤️ اتصال هوش مصنوعی در مرحلهٔ بعد تنظیم می‌شه.';
+messages.appendChild(reply);
+messages.scrollTop=messages.scrollHeight;
+});
+</script>
+</body>
+  </html>
